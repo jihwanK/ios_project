@@ -45,6 +45,7 @@ struct HomeView: View {
                 .cornerRadius(12)
             }
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
