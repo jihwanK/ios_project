@@ -8,192 +8,244 @@
 
 import SwiftUI
 
+
 struct GameView: View {
-    @State private var size: CGFloat? = 30
-    @State private var rectColor = Color.white
-    @State private var borderColor = Color.black
-    @State private var borderWidth: CGFloat = 2
     
-    @State private var groundColor = Color.red
-    @State private var groundW: CGFloat = 300
-    @State private var groundH: CGFloat = 500
+    /* VARIABLES */
+    private let size: CGFloat? = 25
+//    @State private var rectColor = Color.white
+    private let rectColor = Color.white
     
+    private let emptyBorderColor = Color.white
+    private let borderColor = Color.black
+    private let borderWidth: CGFloat = 0.8
+    
+    private let blockSpace: CGFloat? = 0.0
+    
+//    private let groundColor = Color.red
+    private let groundW: CGFloat = 250
+    private let groundH: CGFloat = 500
+    
+    @State private var num: CGFloat = 100.0
+
     var body: some View {
+        self.num += 500
         
-        
-        Rectangle()
-            .opacity(0)
-            .frame(width: self.groundW, height: self.groundH)
-            .border(self.borderColor, width: self.borderWidth)
-        
-        
-        
-//        VStack (alignment: .leading) {
-//            Rectangle()
-//                .fill(self.rectColor)
-//                .frame(width: self.size, height: self.size)
-//                .border(self.borderColor, width: self.borderWidth)
-//
-//            HStack {
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//            }
-//        }
-//
-//        VStack (alignment: .trailing) {
-//            HStack {
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//            }
-//
-//            Rectangle()
-//                .fill(self.rectColor)
-//                .frame(width: self.size, height: self.size)
-//                .border(self.borderColor, width: self.borderWidth)
-//        }
-//
-//        VStack {
-//            HStack {
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//            }
-//
-//            HStack {
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//            }
-//        }
-        
-//        VStack {
-//            HStack (spacing: 1) {
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//            }
-//        }
-        
-//        VStack (alignment: .leading) {
-//            HStack {
-//                Rectangle()
-//                    .fill(Color.white)
-//                    .frame(width: self.size, height: self.size)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//            }
-//
-//            HStack {
-//                Rectangle()
-//                    .fill(Color.white)
-//                    .frame(width: self.size, height: self.size)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//            }
-//
-//            HStack {
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//            }
-//        }
-//
-//        VStack (alignment: .leading) {
-//            HStack {
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(Color.white)
-//                    .frame(width: self.size, height: self.size)
-//            }
-//
-//            HStack {
-//                Rectangle()
-//                    .fill(Color.white)
-//                    .frame(width: self.size, height: self.size)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//            }
-//
-//            HStack {
-//                Rectangle()
-//                    .fill(Color.white)
-//                    .frame(width: self.size, height: self.size)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//                Rectangle()
-//                    .fill(self.rectColor)
-//                    .frame(width: self.size, height: self.size)
-//                    .border(self.borderColor, width: self.borderWidth)
-//            }
-//        }
+        return ZStack {
+            Rectangle()
+                .opacity(0.0)
+                .frame(width: self.groundW, height: self.groundH)
+                .border(self.borderColor, width: self.borderWidth)
+            
+            VStack (alignment: .trailing, spacing: self.blockSpace) {
+                HStack (spacing: self.blockSpace) {
+                    Rectangle()
+                        .fill(self.rectColor)
+                        .frame(width: self.size, height: self.size)
+                        .border(self.borderColor, width: self.borderWidth)
+                    Rectangle()
+                        .fill(self.rectColor)
+                        .frame(width: self.size, height: self.size)
+                        .border(self.borderColor, width: self.borderWidth)
+                    Rectangle()
+                        .fill(self.rectColor)
+                        .frame(width: self.size, height: self.size)
+                        .border(self.borderColor, width: self.borderWidth)
+                }
+                
+                Rectangle()
+                    .fill(self.rectColor)
+                    .frame(width: self.size, height: self.size)
+                    .border(self.borderColor, width: self.borderWidth)
+            }
+            .rotationEffect(Angle.degrees(270))
+            .position(x: self.num, y: self.num)
+            
+        }
     }
+    
+    
+    //        VStack (alignment: .leading, spacing: self.blockSpace) {
+    //            HStack(spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .frame(width: self.size, height: self.size)
+    //        .opacity(0.0)
+    //
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //            }
+    //
+    //            HStack(spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //            }
+    //        }
+    
+    // ㄴ
+    //        VStack (alignment: .leading, spacing: self.blockSpace) {
+    //            Rectangle()
+    //                .fill(self.rectColor)
+    //                .frame(width: self.size, height: self.size)
+    //                .border(self.borderColor, width: self.borderWidth)
+    //
+    //            HStack (spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //            }
+    //        }
+    
+    // ㄱ
+    //        VStack (alignment: .trailing, spacing: self.blockSpace) {
+    //            HStack (spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //            }
+    //
+    //            Rectangle()
+    //                .fill(self.rectColor)
+    //                .frame(width: self.size, height: self.size)
+    //                .border(self.borderColor, width: self.borderWidth)
+    //        }
+    
+    // ㅁ
+    //        VStack (spacing: self.blockSpace) {
+    //            HStack (spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //            }
+    //
+    //            HStack (spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //            }
+    //        }
+    
+    //        ㅡ
+    //        VStack (spacing: self.blockSpace) {
+    //            HStack (spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //            }
+    //        }
+    
+    // 역z
+    //        VStack (alignment: .leading, spacing: self.blockSpace) {
+    //            HStack (spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .frame(width: self.size, height: self.size)
+    //            .opacity(0.0)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //            }
+    //
+    //            HStack (spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //            }
+    //        }
+    
+    //        z
+    //        VStack (alignment: .leading, spacing: self.blockSpace) {
+    //            HStack (spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .frame(width: self.size, height: self.size)
+    //                    .opacity(0.0)
+    //            }
+    //
+    //
+    //            HStack (spacing: self.blockSpace) {
+    //                Rectangle()
+    //                    .frame(width: self.size, height: self.size)
+    //                    .opacity(0.0)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //                Rectangle()
+    //                    .fill(self.rectColor)
+    //                    .frame(width: self.size, height: self.size)
+    //                    .border(self.borderColor, width: self.borderWidth)
+    //            }
+    //        }
+    //}
 }
 
 

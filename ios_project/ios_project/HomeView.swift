@@ -44,8 +44,8 @@ struct HomeView: View {
                 .background(Color.gray)
                 .cornerRadius(12)
             }
+            .navigationBarTitle(Text("TETRIS GAME"))
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
 
