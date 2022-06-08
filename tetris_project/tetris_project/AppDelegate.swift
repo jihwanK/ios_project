@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ios_project
+//  tetris_project
 //
-//  Created by Jihwan Kim on 19/10/2019.
+//  Created by Jihwan Kim on 2019/10/23.
 //  Copyright © 2019 Jihwan Kim. All rights reserved.
 //
 

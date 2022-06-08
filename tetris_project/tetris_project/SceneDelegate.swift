@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  ios_project
+//  tetris_project
 //
-//  Created by Jihwan Kim on 19/10/2019.
+//  Created by Jihwan Kim on 2019/10/23.
 //  Copyright © 2019 Jihwan Kim. All rights reserved.
 //
 
@@ -20,15 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let homeView = HomeView()
-//        let homeView = NameView()
-//        let nameView = NameView()
-//        let gameView = GameView()
+        let contentView = ContentView()
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: homeView)
+            window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window
             window.makeKeyAndVisible()
         }
